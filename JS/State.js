@@ -26,7 +26,7 @@ class State extends React.Component{
 	static navigationOptions = { title:"Learn about state" };
 	render(){
 		return (
-			<Blink text="This text is blinking"/>
+			<text>THis is about state</text>
 		);
 	};
 

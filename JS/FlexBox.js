@@ -6,7 +6,11 @@ class FlexBox extends React.Component{
 	render(){
 		return(
 			<View>
-				<Text>FlexBox</Text>
+				<Text>FlexBox - column</Text>
+				<View style={{flex: 1, flexDirection: 'column'}}/>
+				<View style={{width: 50, height: 50, backgroundColor: 'blue'}} />
+				<View style={{width: 50, height: 50, backgroundColor: 'green'}} />
+				<View style={{width: 50, height: 50, backgroundColor: 'pink'}} />
 			</View>
 		)
 	}

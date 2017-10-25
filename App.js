@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Platform, TouchableOpacity, StyleSheet, Button, WebView } from 'react-native';
+import { Text, View, Platform, TouchableOpacity, StyleSheet, Button, WebView, ScrollView } from 'react-native';
 import { Constants, WebBrowser } from "expo";
 import { StackNavigator } from 'react-navigation';
 import Basics from "./JS/Basics";
@@ -10,7 +10,7 @@ import HeightWidth from "./JS/HeightWidth";
 import FlexBox from "./JS/FlexBox";
 import TextInput from "./JS/TextInput";
 import Touches from "./JS/Touches";
-import ScrollView from "./JS/ScrollView";
+import ViewScroll from "./JS/ViewScroll";
 import ListView from "./JS/ListViews";
 import Networking from "./JS/Networking";
 
@@ -43,7 +43,7 @@ class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View >
+      <ScrollView >
         <Text style={{ textAlign: "center", fontSize: 20 }}>See all Demos implemented by</Text>
         <Text style={{ textAlign: "center", fontSize: 20 }}>Kasper Ravn Breindal</Text>
         <Text style={{ textAlign: "center", fontSize: 16 }}>http://github.com/kasperonfire/tutorial-native-app</Text>
@@ -52,14 +52,14 @@ class HomeScreen extends React.Component {
         <Touchable onPress={() => navigate('props')} title="Props" />
         <Touchable onPress={() => navigate('state')} title="State" />
 		<Touchable onPress={() => navigate('styles')} title="Styles" />
-        <Touchable onPress={() => navigate('heighthwidth')} title="HeightWidth" />
+        <Touchable onPress={() => navigate('heightwidth')} title="HeightWidth" />
 		<Touchable onPress={() => navigate('flexbox')} title="FlexBox" />
 		<Touchable onPress={() => navigate('textinput')} title="TextInput" />
-		<Touchable onPress={() => navigate('touches')} title="Touches" />
-		<Touchable onPress={() => navigate('scrollview')} title="ScrollView" />
+		<Touchable onPress={() => navigate('Touches')} title="Touches" />
+		<Touchable onPress={() => navigate('ViewScroll')} title="ViewScroll" />
         <Touchable onPress={() => navigate('listview')} title="ListView" />
         <Touchable onPress={() => navigate('networking')} title="Networking" />
-      </View>
+      </ScrollView>
     )
   }
 }
@@ -75,11 +75,11 @@ const RouteStack = StackNavigator({
   styles: { screen: Styles },
   heightwidth: { screen: HeightWidth },
   flexbox: { screen: FlexBox },
-  listview: { screen: ListView},
-  scrollview: { screen: ScrollView},
-  networking: { screen: Networking},
+  listview: { screen: ListView },
+  ViewScroll: { screen: ViewScroll },
+  networking: { screen: Networking },
   textinput: {screen: TextInput },
-  touches: {screen: Touches}
+  Touches: {screen: Touches }
 });
 
 const styles = StyleSheet.create({
