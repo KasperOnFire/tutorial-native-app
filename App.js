@@ -1,37 +1,18 @@
-import React from 'react';
+import React from "react";
 import { Text, View, Platform, TouchableOpacity, StyleSheet, Button, WebView } from 'react-native';
 import { Constants, WebBrowser } from "expo";
 import { StackNavigator } from 'react-navigation';
-
-//Todo: Refactor into a seperate file (Basics.js), import and complete the exercise
-class Basics extends React.Component {
-  static navigationOptions = { title: "Learn the Basics" }
-  render() {
-    return (<View><Text>Learn The Bacics</Text></View>)
-  }
-}
-
-//Todo: Refactor into a seperate file (Props.js), import and complete the exercise
-class Props extends React.Component {
-  static navigationOptions = { title: "Learn about Props" }
-  render() {
-    return (
-      <View>
-        <Text>Props</Text>
-      </View>
-    )
-  }
-}
-//Todo: Create a new file (State.js), import it, add a "Touchable", and complete the exercise
-//Todo: Create a new file (Style.js), import it, add a "Touchable", and complete the exercise
-//Todo: Create a new file (HeightWidth.js), import it,add a "Touchable", and complete the exercise
-//Todo: Create a new file (HeightWidth.js), import it,add a "Touchable", and complete the exercise
-//Todo: Create a new file (FlexBox.js), import it,add a "Touchable", and complete the exercise
-//Todo: Create a new file (TextInput.js), import it,add a "Touchable", and complete the exercise
-//Todo: Create a new file (Touches.js), import it,add a "Touchable", and complete the exercise
-//Todo: Create a new file (ScrollView.js), import it,add a "Touchable", and complete the exercise
-//Todo: Create a new file (ListViews.js), import it,add a "Touchable", and complete the exercise
-//Todo: Create a new file (NetWorking.js), import it,add a "Touchable", and complete the exercise
+import Basics from "./JS/Basics";
+import Props from "./JS/Props";
+import State from "./JS/State";
+import Styles from "./JS/Styles";
+import HeightWidth from "./JS/HeightWidth";
+import FlexBox from "./JS/FlexBox";
+import TextInput from "./JS/TextInput";
+import Touches from "./JS/Touches";
+import ScrollView from "./JS/ScrollView";
+import ListView from "./JS/ListViews";
+import Networking from "./JS/Networking";
 
 const Touchable = (props) => (
   <TouchableOpacity style={styles.button} onPress={props.onPress}>
@@ -63,10 +44,21 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View >
-        <Text style={{ textAlign: "center", fontSize: 20 }}>See all Demos implemented by XXXX</Text>
+        <Text style={{ textAlign: "center", fontSize: 20 }}>See all Demos implemented by</Text>
+        <Text style={{ textAlign: "center", fontSize: 20 }}>Kasper Ravn Breindal</Text>
+        <Text style={{ textAlign: "center", fontSize: 16 }}>http://github.com/kasperonfire/tutorial-native-app</Text>
         <Touchable onPress={() => navigate('web')} title="What I have to do" />
         <Touchable onPress={() => navigate('basics')} title="Basics" />
         <Touchable onPress={() => navigate('props')} title="Props" />
+        <Touchable onPress={() => navigate('state')} title="State" />
+		<Touchable onPress={() => navigate('styles')} title="Styles" />
+        <Touchable onPress={() => navigate('heighthwidth')} title="HeightWidth" />
+		<Touchable onPress={() => navigate('flexbox')} title="FlexBox" />
+		<Touchable onPress={() => navigate('textinput')} title="TextInput" />
+		<Touchable onPress={() => navigate('touches')} title="Touches" />
+		<Touchable onPress={() => navigate('scrollview')} title="ScrollView" />
+        <Touchable onPress={() => navigate('listview')} title="ListView" />
+        <Touchable onPress={() => navigate('networking')} title="Networking" />
       </View>
     )
   }
@@ -79,6 +71,15 @@ const RouteStack = StackNavigator({
   basics: { screen: Basics },
   props: { screen: Props },
   web: { screen: WhatToDo },
+  state: { screen: State },
+  styles: { screen: Styles },
+  heightwidth: { screen: HeightWidth },
+  flexbox: { screen: FlexBox },
+  listview: { screen: ListView},
+  scrollview: { screen: ScrollView},
+  networking: { screen: Networking},
+  textinput: {screen: TextInput },
+  touches: {screen: Touches}
 });
 
 const styles = StyleSheet.create({
